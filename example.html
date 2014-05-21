@@ -1,0 +1,20 @@
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="message-controller.js"></script>
+  </head>
+  <body ng-controller="MessageController">
+    <div>
+      <p>Digite seu nome: <input ng-model="nome" placeholder="Seu nome aqui .."></p>
+      <p>{{nome}}</p>
+    </div<
+    <div>
+      <textarea ng-model="descricao">{{descricao}}</textarea>
+    </div>
+    <p ng-show='naoTemQuantidadeMinimaDeCaracteres()'>Minimo de 10 caracteres</p>
+    <div>
+      <button ng-disabled="naoTemQuantidadeMinimaDeCaracteres()">Enviar</button>
+    </div>
+  </body>
+</html>
+
