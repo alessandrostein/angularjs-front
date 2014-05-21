@@ -2,6 +2,7 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
     <script src="message-controller.js"></script>
+    <script src="empresa-controller.js"></script>
   </head>
   <body ng-controller="MessageController">
     <div>
@@ -15,6 +16,26 @@
     <div>
       <button ng-disabled="naoTemQuantidadeMinimaDeCaracteres()">Enviar</button>
     </div>
+    <div ng-controller="EmpresaController">
+      <div>
+        <form>
+          <label>Nome</label>
+          <input ng-model="nome"/>
+          <label>Idade</label>
+          <input ng-model="idade"/>
+          <button ng-click="adicionarEmpregado()">Incluir</button>
+        </form>
+        <table>
+          <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+          </tr>
+          <tr ng-repeat="empregado in empregados">
+            <td>{{empregado.nome}}</td>
+            <td>{{empregado.idade}}</td>
+          </tr>
+        </table>
+      </div>
   </body>
 </html>
 
